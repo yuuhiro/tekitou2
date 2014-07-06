@@ -1,0 +1,375 @@
+//-------------------------------------//
+//  ClearFix
+//-------------------------------------//
+.cf:before,
+.cf:after {
+	content: " ";
+	display: table;
+}
+.cf:after {
+	clear: both;
+}
+
+// Ellipsis
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+//-------------------------------------//
+//  フォントたち
+//-------------------------------------//
+.fw-b {
+	font-weight: bold !important;
+}
+
+.fc-wt {
+	color: #fff !important;
+}
+.fc-a {
+	color: #1a2c42 !important;
+}
+
+@for $i from 10 through 20 {
+	.fz-#{$i} {
+		font-size: ($i / 10)+rem !important;
+	}
+}
+
+.fz-30 {
+	font-size: 3rem !important;
+}
+
+// テキストの配置
+.ta-l {
+	text-align: left !important;
+}
+.ta-c {
+	text-align: center !important;
+}
+.ta-r {
+	text-align: right !important;
+}
+
+.va-0 {
+	vertical-align: 0 !important;
+}
+.va-1 {
+	vertical-align: -1px !important;
+}
+.va-2 {
+	vertical-align: -2px !important;
+}
+.va-3 {
+	vertical-align: -3px !important;
+}
+.va-4 {
+	vertical-align: -4px !important;
+}
+.va-5 {
+	vertical-align: -5px !important;
+}
+.va-t {
+	vertical-align: top !important;
+}
+.va-m {
+	vertical-align: middle !important;
+}
+.va-b {
+	vertical-align: bottom !important;
+}
+
+//-------------------------------------//
+//  背景色
+//-------------------------------------//
+.bg-wt {
+	background-color: #fff;
+}
+.bg-a {
+	background-color: #1a1a1a;
+}
+
+.fl-l{
+	float: left;
+}
+.fl-r{
+	float: right;
+}
+
+/*----------------------------------
+  余白調整
+------------------------------------*/
+// マージン全方向
+.mga-5 {
+	margin: 5px !important;
+}
+.mga-10 {
+	margin: 10px !important;
+}
+.mga-15 {
+	margin: 15px !important;
+}
+.mga-20 {
+	margin: 20px !important;
+}
+
+// マージン上
+.mgt-5 {
+	margin-top: 5px !important;
+}
+.mgt-10 {
+	margin-top: 10px !important;
+}
+.mgt-15 {
+	margin-top: 15px !important;
+}
+.mgt-20 {
+	margin-top: 20px !important;
+}
+.mgt-0 {
+	margin-top: 0 !important;
+}
+
+// マージン下
+.mgb-5 {
+	margin-bottom: 5px !important;
+}
+.mgb-10 {
+	margin-bottom: 10px !important;
+}
+.mgb-15 {
+	margin-bottom: 15px !important;
+}
+.mgb-20 {
+	margin-bottom: 20px !important;
+}
+.mgb-0 {
+	margin-bottom: 0 !important;
+}
+
+// マージン左
+.mgl-5 {
+	margin-left: 5px !important;
+}
+.mgl-10 {
+	margin-left: 10px !important;
+}
+.mgl-15 {
+	margin-left: 15px !important;
+}
+.mgl-20 {
+	margin-left: 20px !important;
+}
+.mgl-0 {
+	margin-left: 0 !important;
+}
+
+// マージン右
+.mgr-5 {
+	margin-right: 5px !important;
+}
+.mgr-10 {
+	margin-right: 10px !important;
+}
+.mgr-15 {
+	margin-right: 15px !important;
+}
+.mgr-20 {
+	margin-right: 20px !important;
+}
+.mgr-0 {
+	margin-right: 0 !important;
+}
+
+.mg-center {
+	margin: 0 auto;
+}
+
+// パディング全方向
+.pda-5 {
+	padding: 5px !important;
+}
+.pda-10 {
+	padding: 10px !important;
+}
+.pda-15 {
+	padding: 15px !important;
+}
+.pda-20 {
+	padding: 20px !important;
+}
+
+// パディング上
+.pdt-5 {
+	padding-top: 5px !important;
+}
+.pdt-10 {
+	padding-top: 10px !important;
+}
+.pdt-15 {
+	padding-top: 15px !important;
+}
+.pdt-20 {
+	padding-top: 20px !important;
+}
+.pdt-0 {
+	padding-top: 0 !important;
+}
+
+// パディング下
+.pdb-5 {
+	padding-bottom: 5px !important;
+}
+.pdb-10 {
+	padding-bottom: 10px !important;
+}
+.pdb-15 {
+	padding-bottom: 15px !important;
+}
+.pdb-20 {
+	padding-bottom: 20px !important;
+}
+.pdb-0 {
+	padding-bottom: 0 !important;
+}
+
+// パディング左
+.pdl-5 {
+	padding-left: 5px !important;
+}
+.pdl-10 {
+	padding-left: 10px !important;
+}
+.pdl-15 {
+	padding-left: 15px !important;
+}
+.pdl-20 {
+	padding-left: 20px !important;
+}
+.pdl-0 {
+	padding-left: 0 !important;
+}
+
+// パディング右
+.pdr-5 {
+	padding-right: 5px !important;
+}
+.pdr-10 {
+	padding-right: 10px !important;
+}
+.pdr-15 {
+	padding-right: 15px !important;
+}
+.pdr-20 {
+	padding-right: 20px !important;
+}
+.pdr-0 {
+	padding-right: 0 !important;
+}
+
+/*----------------------------------------
+  Table
+----------------------------------------*/
+.d-tb {
+	display: table !important;
+	width: 100%;
+	table-layout: fixed;
+}
+.d-tbc {
+	display: table-cell !important;
+}
+.d-b {
+	display: block;
+}
+.d-ib {
+	display: inline-block;
+}
+.ov-h {
+	overflow: hidden !important;
+}
+.bxz-bb {
+	-webkit-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+.pos-r {
+	position: relative;
+}
+.pos-a {
+	position: absolute;
+}
+.fixed {
+	position: fixed;
+}
+
+// 非表示にする
+.is-invisible {
+	visibility: hidden;
+}
+
+// TODO .hideヘルパーを追加
+.is-hide {
+	display: none !important;
+}
+
+/*----------------------------------------
+  size
+----------------------------------------*/
+.w-120 {
+	width: 120px;
+}
+.w-200 {
+	width: 200px;
+}
+
+.w-5p {
+	width: 5%;
+}
+.w-10p {
+	width: 10%;
+}
+.w-15p {
+	width: 15%;
+}
+.w-20p {
+	width: 20%;
+}
+.w-25p {
+	width: 25%;
+}
+.w-30p {
+	width: 30%;
+}
+.w-35p {
+	width: 35%;
+}
+.w-40p {
+	width: 40%;
+}
+.w-45p {
+	width: 45%;
+}
+.w-50p {
+	width: 50%;
+}
+.w-60p {
+	width: 60%;
+}
+.w-70p {
+	width: 70%;
+}
+.w-75p {
+	width: 75%;
+}
+.w-80p {
+	width: 80%;
+}
+.w-90p {
+	width: 90%;
+}
+.w-100p {
+	width: 100%;
+}
+

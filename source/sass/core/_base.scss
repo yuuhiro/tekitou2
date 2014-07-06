@@ -1,0 +1,49 @@
+html,body {
+	width: 100%;
+	height: 100%;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.6rem;
+	color: #596770;
+	// font-family: 'Raleway', sans-serif;
+	word-wrap: break-word;
+	background: #edf2f7;
+	// background: image-url("polygon_bg7.png") repeat;
+	background-attachment: fixed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+img {
+	width: 100%;
+	vertical-align: bottom;
+}
+p, ul,li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 4rem;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #596770;
+	text-decoration: none;
+	@include transition(color 0.3s ease-in-out);
+	&:hover {
+		color: hsla(217, 95%, 47%, 1);
+	}
+}
+input, textarea {
+	border: none;
+	background: none;
+	border: none;
+	overflow: auto;
+	outline: none;
+	@include box-shadow(none);
+	@include placeholder-color(#fff, 100);
+}

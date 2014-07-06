@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	{{> meta}}
+	<body>
+		<div class="l-wrapper">
+			{{> _globalHeader}}
+			<div class="l-contents cf">
+				{{body}}
+				{{#if side}}
+				{{> _globalSide}}
+				{{/if}}
+			</div>
+			{{> _globalFooter}}
+		</div>
+	</body>
+</html>

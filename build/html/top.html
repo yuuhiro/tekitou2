@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+	<meta charset="UTF-8">
+	<title>てきとう</title>
+	<link href="/favicon.png" type="image/png" rel="shortcut icon">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.3/angular-animate.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="/static/js/app.js"></script>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400|Raleway:400,200,100' rel='stylesheet' type='text/css'> -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.min.css"></link> -->
+	<link rel='stylesheet' href='/static/css/all.css' />
+</head>
+	<body>
+		<div class="l-wrapper">
+			<div class="l-header">
+	<div class="box-header" ng-controller="globalNavi" ng-class="{'is-sticky': isSticky}">
+		<div class="box-header__wrapper">
+			<div class="box-header__inner d-tb grid grid--12">
+				<div class="box-header__logo d-tbc va-m">
+					<p class="fc-wt fz-20">Logo</p>
+				</div>
+				<div class="box-global-navi__item box-global-navi__item--search d-tbc va-m ta-c w-30p pdl-20">
+					<form class="form-search d-tb icon-wf fc-wt" data-icon-bf="&#xE602">
+						<input class="pdl-10 bxz-bb" type="search" placeholder="Search">
+					</form>
+				</div>
+				<a href="#" class="box-global-navi__item d-tbc va-m ta-c fc-wt icon-wf" data-icon-bf="&#xE605" data-icon-af="&#xE608" ng-click="accordionSubMenu('ranking')" ng-class="{'is-open': isOpenSubRanking}">
+					Ranking
+				</a>
+				<a href="#" class="box-global-navi__item d-tbc va-m ta-c fc-wt icon-wf" data-icon-bf="&#xE600" data-icon-af="&#xE608" ng-click="accordionSubMenu('tags')" ng-class="{'is-open': isOpenSubTags}">
+					Tags
+				</a>
+				<div class="box-header__login d-tbc va-m ta-c w-200" ng-controller="logIn">
+					<a href="#" class="fc-wt va-m" ng-click="login">Login</a>
+					<span class="fc-wt pdl-4 pdr-4 va-m">/</span>
+					<a href="#" class="btn btn--c btn--border btn--medium btn--transition va-m" ng-click="signup()">Signup</a>
+				</div>
+			</div>
+			<div class="box-sub-navi ng-hide" ng-show="isOpenSubRanking">
+				<div class="box-sub-navi__item box-sub-navi__item--ranking d-tb grid grid--12 ng-hide" ng-show="isOpenSubRanking">
+					<div class="d-tbc va-m">
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank3</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank3</a>
+					</div>
+				</div>
+			</div>
+			<div class="box-sub-navi ng-hide" ng-show="isOpenSubTags">
+				<div class="box-sub-navi__item box-sub-navi__item--tags d-tb grid grid--12 ng-hide" ng-show="isOpenSubTags">
+					<div class="d-tbc va-m">
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag3</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag3</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/ng-template" id="myModalContent">
+	<div class="modal-header">
+		<h3 class="modal-title">Im a modal!</h3>
+	</div>
+	<div class="modal-body">
+	</div>
+	<div class="modal-footer ta-c">
+		<a href="#" class="btn btn--a btn--medium btn--transition w-120" ng-click="ok()">OK</a>
+		<a href="#" class="btn btn--b btn--medium btn--transition w-120 mgl-20" ng-click="cancel()">Cancel</a>
+	</div>
+</script>
+			<div class="l-contents cf">
+				
+	<div class="grid grid--12">
+		<div class="l-main grid grid--9 pdr-20">
+			<div class="u-pickup">
+				<h2 class="heading heading--a">Pickup</h2>
+				<div class="block block--3 block--margin block--respond fz-30">
+					
+					<div class="block__item">
+					<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">言の葉の庭 Rain / 秦基博(Motohiro Hata)</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+					<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">秒速5センチメートル 特典 「One more time, One more chance」 山崎まさよし</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+					<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">僕らの夏の夢</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="u-recently-Post">
+				<h2 class="heading heading--a">RecentlyPost</h2>
+				<div class="block block--4 block--margin block--respond fz-30">
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">Squarepusher - Iambic 9 Poetry</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">BUMP OF CHICKEN『車輪の唄』</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">TEENAGE MUTANT NINJA TURTLES Trailer</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">攻殻機動隊　STAND ALONE COMPLEX　第1話</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">「攻殻機動隊ARISE border:2」Blu-ray PV</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">Gotye - Somebody That I Used To Know (feat. Kimbra) - official video</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">Bruce Lee&#x27;s Game of Death Original</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">Future World Music - Follow Your Dream</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">座頭市 勝新太郎 「殺陣集」 Zatoichi.Shintaro Katsu</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+					<div class="block__item">
+						<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">こりゃめでてーな伊藤　カイジのものまね</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="l-side grid grid--3 pdl-20">
+			<div class="u-pickup">
+				<h2 class="heading heading--a">Pickup</h2>
+				
+				<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">言の葉の庭 Rain / 秦基博(Motohiro Hata)</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+				
+				<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">秒速5センチメートル 特典 「One more time, One more chance」 山崎まさよし</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+				
+				<div class="article article--pickup fz-16">
+	<div class="article__header">
+		<a href="#" class="article__thumb d-b">
+			<img src="http://placebox.es/640/350">
+		</a>
+	</div>
+	<div class="article__body">
+		<a href="#" class="article__body__title d-b">僕らの夏の夢</a>
+		<p class="article__body__action">
+			<a href="#" class="c-like mgr-10 icon-wf" data-icon-bf="&#xE605">
+				<span class="c-like__count">67</span>
+			</a>
+			<a href="#" class="c-favorite icon-wf" data-icon-bf="&#xE604">
+				<span class="c-favorite__count">163</span>
+			</a>
+		</p>
+	</div>
+</div>
+				
+			</div>
+		</div>
+	</div>
+				
+			</div>
+			<footer>
+</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<div class="l-header">
+	<div class="box-header" ng-controller="globalNavi" ng-class="{'is-sticky': isSticky}">
+		<div class="box-header__wrapper">
+			<div class="box-header__inner d-tb grid grid--12">
+				<div class="box-header__logo d-tbc va-m">
+					<p class="fc-wt fz-20">Logo</p>
+				</div>
+				<div class="box-global-navi__item box-global-navi__item--search d-tbc va-m ta-c w-30p pdl-20">
+					<form class="form-search d-tb icon-wf fc-wt" data-icon-bf="&#xE602">
+						<input class="pdl-10 bxz-bb" type="search" placeholder="Search">
+					</form>
+				</div>
+				<a href="#" class="box-global-navi__item d-tbc va-m ta-c fc-wt icon-wf" data-icon-bf="&#xE605" data-icon-af="&#xE608" ng-click="accordionSubMenu('ranking')" ng-class="{'is-open': isOpenSubRanking}">
+					Ranking
+				</a>
+				<a href="#" class="box-global-navi__item d-tbc va-m ta-c fc-wt icon-wf" data-icon-bf="&#xE600" data-icon-af="&#xE608" ng-click="accordionSubMenu('tags')" ng-class="{'is-open': isOpenSubTags}">
+					Tags
+				</a>
+				<div class="box-header__login d-tbc va-m ta-c w-200" ng-controller="logIn">
+					<a href="#" class="fc-wt va-m" ng-click="login">Login</a>
+					<span class="fc-wt pdl-4 pdr-4 va-m">/</span>
+					<a href="#" class="btn btn--c btn--border btn--medium btn--transition va-m" ng-click="signup()">Signup</a>
+				</div>
+			</div>
+			<div class="box-sub-navi ng-hide" ng-show="isOpenSubRanking">
+				<div class="box-sub-navi__item box-sub-navi__item--ranking d-tb grid grid--12 ng-hide" ng-show="isOpenSubRanking">
+					<div class="d-tbc va-m">
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank3</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Rank3</a>
+					</div>
+				</div>
+			</div>
+			<div class="box-sub-navi ng-hide" ng-show="isOpenSubTags">
+				<div class="box-sub-navi__item box-sub-navi__item--tags d-tb grid grid--12 ng-hide" ng-show="isOpenSubTags">
+					<div class="d-tbc va-m">
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag3</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag1</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag2</a>
+						<a href="#" class="btn btn--f btn--medium btn--transition">Tag3</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/ng-template" id="myModalContent">
+	<div class="modal-header">
+		<h3 class="modal-title">Im a modal!</h3>
+	</div>
+	<div class="modal-body">
+	</div>
+	<div class="modal-footer ta-c">
+		<a href="#" class="btn btn--a btn--medium btn--transition w-120" ng-click="ok()">OK</a>
+		<a href="#" class="btn btn--b btn--medium btn--transition w-120 mgl-20" ng-click="cancel()">Cancel</a>
+	</div>
+</script>

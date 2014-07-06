@@ -1,0 +1,75 @@
+// Box
+//
+// Buttons can and should be clicked.
+//
+// Styleguide 1
+
+.box-header {
+	width: 100%;
+	position: fixed;
+	// background: image-url("polygon_bg8.png") repeat;
+	background: image-url("head_bg.svg") repeat;
+	background-position: 0px -100px;
+}
+.box-header__wrapper {
+	// background: hsla(281, 70%, 11%, .6);
+}
+.box-header__logo {
+	color: #1a2c42;
+}
+.box-header__inner {
+	height: 60px;
+}
+
+.box-global-navi__item {
+	color: #1a2c42;
+	text-shadow: 0 1px 2px #5E81BE;
+	@include transition(background-color 0.3s ease-in-out);
+	&:hover {
+		color: #fff;
+		background-color: hsla(217, 95%, 47%, 0.5);
+	}
+	&::before {
+		margin-right: 5px;
+		vertical-align: -1px;
+	}
+	&::after {
+		display: inline-block;
+		font-size: 0.5em;
+		vertical-align: 1px;
+		margin-left: 5px;
+		@include rotate(90deg);
+		@include transition(all 0.3s ease-in-out);
+	}
+	&.is-open {
+		&::after {
+			@include rotate(-90deg);
+		}
+	}
+}
+.box-sub-navi {
+	height: 60px;
+	width: 100%;
+	overflow: hidden;
+	background: hsla(0, 0%, 22%, 0.98);
+	&.ng-hide-add,
+	&.ng-hide-remove {
+		@include transition(height linear 0.2s);
+	}
+	&.ng-hide {
+		display: block !important;
+		height: 0;
+	}
+}
+.box-sub-navi__item {
+	height: 100%;
+	line-height: 0;
+	opacity: 1;
+	&.ng-hide-add,
+	&.ng-hide-remove {
+		@include transition(opacity linear 0.2s);
+	}
+	&.ng-hide {
+		opacity: 0;
+	}
+}

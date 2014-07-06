@@ -1,0 +1,12 @@
+.form-search {
+	&::before {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	input {
+		// color: #fff;
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+	}
+}

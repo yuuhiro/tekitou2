@@ -1,0 +1,155 @@
+// Button
+//
+// Buttonsだよ
+//
+// Styleguide 2
+
+// Default Skins
+//
+// Buttons can and should be clicked.
+//
+// Markup: <a href="#" class="btn btn--medium {$modifiers}">button</a>
+//
+// .btn--a - Highlight the button when hovered.
+// .btn--b - Highlight the button when hovered.
+// .btn--c - Highlight the button when hovered.
+// .btn--d - Highlight the button when hovered.
+// .btn--e - Highlight the button when hovered.
+//
+// Styleguide 2.1
+
+// Border Skins
+//
+// Buttons can and should be clicked.
+//
+// Markup: <a href="#" class="btn btn--medium btn--border {$modifiers}">button</a>
+//
+// .btn--a - Highlight the button when hovered.
+// .btn--b - Highlight the button when hovered.
+// .btn--c - Highlight the button when hovered.
+// .btn--d - Highlight the button when hovered.
+// .btn--e - Highlight the button when hovered.
+//
+// Styleguide 2.2
+
+.btn {
+	border-radius: 2px;
+	@include box-sizing(border-box);
+}
+
+.btn--transition {
+	position: relative;
+	overflow: hidden;
+	@include transition(color 0.3s ease-in-out, border 0.3s ease-in-out, background-color 0.3s ease-in-out);
+	&:active::before {
+		content: "";
+		position: absolute;
+		top: -32px; /* (button height - height) / 2 */
+		left: calc(50% - 50px);
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;
+		-webkit-animation: scaleout 0.3s 1 ease-out;
+		animation: scaleout 0.3s 1 ease-out;
+
+		opacity: 0;
+	}
+}
+
+.btn--a {
+	display: inline-block;
+	color: #fff;
+	border: 1px solid #0c73e4;
+	background-color: #0c73e4;
+	&.btn--border {
+		color: #0c73e4;
+		border: 1px solid #0c73e4;
+		background-color: transparent;
+		&:hover {
+			color: #fff;
+			background-color: #0c73e4;
+		}
+	}
+	&:active {
+		&::before {
+			background-color: #3B50CE;
+		}
+	}
+}
+.btn--b {
+	display: inline-block;
+	color: #fff;
+	border: 1px solid #84858f;
+	background-color: #84858f;
+	&.btn--border {
+		color: #84858f;
+		border: 1px solid #84858f;
+		background-color: transparent;
+		&:hover {
+			color: #fff;
+			background-color: #84858f;
+		}
+	}
+}
+.btn--c {
+	display: inline-block;
+	color: #222;
+	border: 1px solid #fff;
+	background-color: #fff;
+	&.btn--border {
+		color: #fff;
+		border: 1px solid #fff;
+		background-color: transparent;
+		&:hover {
+			opacity: .8;
+			color: #222;
+			background-color: #fff;
+		}
+	}
+}
+.btn--d {
+	display: inline-block;
+	color: #fff;
+	border: 1px solid #f02073;
+	background-color: #f02073;
+	&.btn--border {
+		color: #f02073;
+		border: 1px solid #f02073;
+		background-color: transparent;
+		&:hover {
+			color: #fff;
+			background-color: #f02073;
+		}
+	}
+}
+.btn--e {
+	display: inline-block;
+	color: #fff;
+	border: 1px solid #2b2438;
+	background-color: #2b2438;
+	&.btn--border {
+		color: #2b2438;
+		border: 1px solid #2b2438;
+		background-color: transparent;
+		&:hover {
+			color: #fff;
+			background-color: #2b2438;
+		}
+	}
+}
+.btn--f {
+	display: inline-block;
+	color: #fff;
+	border: 1px solid hsla(0, 0%, 100%, 0);
+	&:hover {
+		color: #fff;
+		border: 1px solid hsla(0, 0%, 100%, 0.3);
+		background-color: hsla(0, 0%, 100%, 0.3);
+	}
+}
+
+.btn--medium {
+	height: 38px;
+	line-height: 38px;
+	padding: 0 1em;
+}

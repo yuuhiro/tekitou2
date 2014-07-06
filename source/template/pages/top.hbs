@@ -1,0 +1,37 @@
+---
+title: てきとう
+layout: default.hbs
+side: false
+---
+	<div class="grid grid--12">
+		<div class="l-main grid grid--9 pdr-20">
+			<div class="u-pickup">
+				<h2 class="heading heading--a">Pickup</h2>
+				<div class="block block--3 block--margin block--respond fz-30">
+					{{#each post_item3}}
+					<div class="block__item">
+					{{> _article}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+			<div class="u-recently-Post">
+				<h2 class="heading heading--a">RecentlyPost</h2>
+				<div class="block block--4 block--margin block--respond fz-30">
+					{{#each post_item10}}
+					<div class="block__item">
+						{{> _article}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		<div class="l-side grid grid--3 pdl-20">
+			<div class="u-pickup">
+				<h2 class="heading heading--a">Pickup</h2>
+				{{#each post_item3}}
+				{{> _article}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
