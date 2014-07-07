@@ -1,14 +1,21 @@
 .article {
-	padding-bottom: 20px;
+	// padding-bottom: 20px;
+	background: #FFF;
+	border-radius: 4px;
+	overflow: hidden;
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 }
 .article__header {
 
 }
 .article__thumb {
 	img {
-		border-radius: 4px;
+		// border-radius: 4px;
 	}
 }
+.article__body {
+	padding: 10px 15px;
+}
 .article__body__title {
-	margin: 1em 0 0.5em;
+	margin: 0 0 0.5em;
 }

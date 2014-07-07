@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 		connect: {
 			all: {
 				options: {
-					port: 8081,
+					port: 8082,
 					base: 'build',
 					// keepalive: true
 					livereload: true,
